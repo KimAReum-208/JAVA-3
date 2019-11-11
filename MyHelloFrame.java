@@ -9,16 +9,18 @@ import javax.swing.*;
  */
 public class MyHelloFrame extends JFrame
 {
-    //public JLabel ml;
+    public JLabel ml;
+    
     public MyHelloFrame(){
         setTitle("실습_3 (2019.11.11)");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300, 300);
-        setVisible(true);
         
-        //JPanel p = new JPanel();
-        //ml = new JLabel("HELLO");
-        this.add(new MyHelloPanelListener());
-        //p.add(ml);
+        ml = new JLabel("HELLO");
+        JPanel mp = new MyHelloPanelListener(ml);
+        mp.add(ml);
+        this.add(mp);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 }
